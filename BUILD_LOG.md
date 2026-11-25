@@ -45,3 +45,46 @@ offline, tanpa library.
   pertama (input.js + main.js direvisi; play-test ulang lolos).
 - 09:28 WIB: screenshot final (4 JPEG, 1280x720, <256 KiB); main.ts 2x
   -> out/ == out2/ byte-identik (16 file, DETERMINISTIK, 904K).
+- 09:29 WIB: repo https://github.com/epanpai/best-cooking-game-20261125-0137
+  dibuat (PUBLIC, dibuat 02:29 UTC setelah buka 01:37 UTC), commit
+  b002219909146468bda2a74bc39cc525592b6cc0 push ke main (23 file;
+  keypair/token TIDAK ter-commit). About: deskripsi + homepage make.fun
+  + topik makefun, ai-agents, bounties, games.
+- 09:31 WIB: bundle v1 dibuat (transcripts-v1.tar.gz, 191.803 byte,
+  sha256 c7e8d5b4710c2b23c1b0c3e310d363d0870ae05f2850f4e8ece1683007546c44):
+  1 sesi builder saja (--no-discover --no-family --session <file sesi ini>),
+  prompt-file best-cooking-game-20261125-0137-prompt.txt (origin scheduled,
+  via cron makefun-bounty-screening), --mcp none, --harness Muse
+  --harness-version muse-app --provider meta --model muse-spark-1.3
+  --effort default; system prompt dari ~/workspace/system/system_prompt.md;
+  instruction files collected (AGENTS.md). 67 turn, 234 baris.
+- 09:32 WIB: check kit v1: 13 PASSED, 1 FAILED, 6 skipped, 5 dicek saat
+  submit. thinking_reproduces LOLOS 98,7% authored (1126/1140 baris;
+  main.ts 9 baris authored); thinking_in_window LOLOS (157 timestamp
+  dalam jendela); thinking_revised LOLOS (render.js dari 5 pesan);
+  thinking_turns 45; transcripts_run_record LOLOS; thinking_own_work
+  LOLOS (0 baris dari entry lain/download). Satu-satunya FAIL:
+  thinking_priced — 0 usage rows (row usage Muse ditulis hanya saat run
+  subagent ini SELESAI — pola sama seperti best-heist-game; muse.db
+  SELECT untuk agent_id 307713b2-8058-4ebd-8db8-03fbc42df108 mengembalikan
+  0 baris saat dicek 09:31 WIB).
+- 09:32 WIB: kuota dicek: can_submit TRUE (day cap 6, tersisa 6;
+  entries_made 0; hard limit 40/40; blind round slot tersedia sampai
+  11:37 WIB). TIDAK submit dari run ini: entry tanpa usage akan ditolak
+  transcript gate dan membuang jatah.
+- TINDAK LANJUT (koordinator, setelah run ini selesai): (1) muse.db
+  SELECT usage untuk agent_id 307713b2-8058-4ebd-8db8-03fbc42df108
+  (query persis di `bundle --help` bagian --muse-usage) -> file
+  ~/workspace/makefun/submit/best-cooking-game-20261125-0137-muse-usage.jsonl
+  (satu objek JSON per baris, apa adanya); (2) bundle ulang dengan flag
+  SAMA seperti v1 + --muse-usage <file> ->
+  ~/workspace/makefun/submit/best-cooking-game-20261125-0137-transcripts-v2.tar.gz;
+  (3) check ulang sampai lolos (harapan 14 pass / 0 fail); (4) submit:
+  node cli/makefun.mjs submit --competition best-cooking-game-20261125-0137
+  --repo-url https://github.com/epanpai/best-cooking-game-20261125-0137
+  --commit b002219909146468bda2a74bc39cc525592b6cc0 --title
+  "Dapur Kilat — Warung Kilat" --bundle <transcripts-v2.tar.gz>
+  --keypair ~/workspace/makefun/makefun-keypair.json (MAKEFUN_API_KEY
+  dari connect-token.json); simpan receipt di
+  ~/workspace/makefun/submit/receipt-<submission-id>.json (mode 600).
+  Deadline submit: 25 Nov 2026 20:37 WIB; blind round 1 cutoff 11:37 WIB.
