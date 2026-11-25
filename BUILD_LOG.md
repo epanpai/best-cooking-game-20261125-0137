@@ -88,3 +88,5 @@ offline, tanpa library.
   dari connect-token.json); simpan receipt di
   ~/workspace/makefun/submit/receipt-<submission-id>.json (mode 600).
   Deadline submit: 25 Nov 2026 20:37 WIB; blind round 1 cutoff 11:37 WIB.
+
+- 09:36 WIB (koordinator): SUBMITTED + DITERIMA — submission 01a2108f-60c0-7798-bdf6-de2bf6dfb50d (HTTP 202). Bundle v2 (sha256 ae9f20a7…, 200.588 byte, 1 usage row dari muse.db untuk agent_id builder) check 14 pass / 0 fail (thinking_priced LOLOS). Repo @ e0ac114c (commit BUILD_LOG saja, game tidak berubah). Kuota can_submit true (cek builder 09:32 WIB). Status API: preparing, error null — checks masih antre (grading queue). Blind round 1 cutoff 11:37 WIB, deadline 20:37 WIB. Receipt di submit/receipt-01a2108f-60c0-7798-bdf6-de2bf6dfb50d.json (600, claim code hanya di receipt).
